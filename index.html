@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="login">
+        <fieldset form="login">
+        <legend>Sign-in: </legend>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" onblur="b()" onfocus="f()"><br><br>
+        <label for="pname">Preferred Name:</label><br>
+        <input type="text" id="pname" name="pname" onblur="b()" onfocus="f()"><br><br>
+        <label for="pword">Password:</label><br>
+        <input type="password" id="pword" name="pword" onblur="b()" onfocus="f()"><br><br>
+        <label for="email">Email:</label><br> 
+        <input type="email" id="email" name="email" onblur="b()" onfocus="f()"><br><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address" onblur="b()" onfocus="f()"><br><br>
+        <label for="interests">Interests: </label></br>
+        <textarea id="int" name="interests" rows="10" cols="20" onblur="b()" onfocus="f()"></textarea><br><br>
+
+        <input type="radio" id="ml" name="gndr" value="Male">
+        <label for="ml">Male</label></br>
+        <input type="radio" id="fml" name="gndr" value="Female">
+        <label for="fml">Female</label></br>
+        <input type="radio" id="pfrnts" name="gndr" value="Prefer not to say">
+        <label for="pfrnts">Prefer not to say</label>
+
+        <br><br>
+        
+        <input type="submit" id="subm" value="Submit" onclick="sbm()">
+        <input type="reset" id="reset" value="Reset" onclick="rs()">
+        </fieldset>
+    </form>
+
+    <p id="nam">Name: </p>
+    <p id="pnam">Preferred: </p>
+    <p id="pass">Password: </p>
+    <p id="emai">Email: </p>
+    <p id="addr">Address: </p>
+    <p id="inte">Interests: </p>
+
+    <script>
+        document.getElementById("subm").disabled = true;
+        function b(){
+            var n = document.getElementById("name").value;
+            var pn = document.getElementById("pname").value;
+            var pw = document.getElementById("pword").value;
+            var e = document.getElementById("email").value;
+            var a = document.getElementById("address").value;
+            var i = document.getElementById("int").value;
+
+            if (n == ""){
+                document.getElementById("name").style.borderColor = "red";
+            } else {
+                document.getElementById("name").style.borderColor = "greenyellow";  
+            }
+
+            if (pn == ""){
+                document.getElementById("pname").style.borderColor = "red";
+            } else {
+                document.getElementById("pname").style.borderColor = "greenyellow";  
+            }
+
+            if (pw == ""){
+                document.getElementById("pword").style.borderColor = "red";
+            } else {
+                document.getElementById("pword").style.borderColor = "greenyellow";  
+            }
+
+            if (e == ""){
+                document.getElementById("email").style.borderColor = "red";
+            } else {
+                document.getElementById("email").style.borderColor = "greenyellow";  
+            }
+
+            if (a == ""){
+                document.getElementById("address").style.borderColor = "red";
+            } else {
+                document.getElementById("address").style.borderColor = "greenyellow";  
+            }
+
+            if (i == ""){
+                document.getElementById("int").style.borderColor = "red";
+            } else {
+                document.getElementById("int").style.borderColor = "greenyellow";  
+            }
+
+            ch();
+        }
+
+        function f(){
+            var n = document.getElementById("name").value;
+            var pn = document.getElementById("pname").value;
+            var pw = document.getElementById("pword").value;
+            var e = document.getElementById("email").value;
+            var a = document.getElementById("address").value;
+            var i = document.getElementById("int").value;
+
+            if (n != ""){
+                document.getElementById("name").style.borderColor = "black";
+            }
+
+            if (pn != ""){
+                document.getElementById("pname").style.borderColor = "black";
+            }
+
+            if (pw != ""){
+                document.getElementById("pword").style.borderColor = "black";
+            }
+
+            if (e != ""){
+                document.getElementById("email").style.borderColor = "black";
+            }
+
+            if (a != ""){
+                document.getElementById("address").style.borderColor = "black";
+            }
+
+            if (i != ""){
+                document.getElementById("interests").style.borderColor = "black";
+            }
+
+            ch();
+        }
+
+        function ch(){
+            var n = document.getElementById("name").value;
+            var pn = document.getElementById("pname").value;
+            var pw = document.getElementById("pword").value;
+            var e = document.getElementById("email").value;
+            var a = document.getElementById("address").value;
+            var i = document.getElementById("int").value;
+            var g = 
+
+            document.getElementById("nam").innerHTML = "Name: " + n;
+            document.getElementById("pnam").innerHTML = "Preferred Name: " + pn;
+            document.getElementById("pass").innerHTML = "Password: " + pw;
+            document.getElementById("emai").innerHTML = "Email: " + e;
+            document.getElementById("addr").innerHTML = "Address: " + a;
+            document.getElementById("inte").innerHTML = "Interests: " + i;
+
+            if (n != ""&& pn != ""&& pw != ""&& e != ""&& a != ""&& i != ""){
+                document.getElementById("subm").disabled = false;
+            }
+        }
+
+
+
+        function rs(){
+            document.getElementById("subm").disabled = true;
+        }
+    </script>
+</body>
+</html>
